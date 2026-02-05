@@ -8,7 +8,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-default-key')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '91.208.35.101']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '172.19.0.1', '91.208.35.101', 'kittygramo.duckdns.org']sudo cat /etc/nginx/conf.d/default
 
 INSTALLED_APPS = [
     'django.contrib.admin',

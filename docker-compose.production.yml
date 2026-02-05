@@ -10,6 +10,9 @@ services:
       - pg_data_production:/var/lib/postgresql/data
   backend:
     image: 0legrogovenko/kittygram_backend
+    env_file: .env
+    depends_on:
+      - db
     volumes:
       - static_volume:/backend_static
   frontend:
@@ -21,6 +24,8 @@ services:
   gateway:
     image: 0legrogovenko/kittygram_gateway
     env_file: .env
+    depends_on:
+      - backend
     volumes:
       - static_volume:/staticfiles/
     ports:
