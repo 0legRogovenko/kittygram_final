@@ -1,6 +1,7 @@
 volumes:
   pg_data_production:
   static_volume:
+  media_volume:
 
 services:
   db:
@@ -19,6 +20,7 @@ services:
       - db
     volumes:
       - static_volume:/backend_static
+      - media_volume:/media
   frontend:
     container_name: kittygram-frontend
     image: 0legrogovenko/kittygram_frontend
@@ -35,5 +37,6 @@ services:
       - backend
     volumes:
       - static_volume:/staticfiles/
+      - media_volume:/media
     ports:
       - 9000:80
