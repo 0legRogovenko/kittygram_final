@@ -28,6 +28,7 @@ services:
     command: cp -r /app/build/. /backend_static/
     volumes:
       - static_volume:/backend_static
+      - media_volume:/media
   gateway:
     container_name: kittygram-gateway
     image: 0legrogovenko/kittygram_gateway
